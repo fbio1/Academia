@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template4.xhtml">
+  <ui:define name="container">
+  	<div class="row center">
+  	<h2>Cadastro de Instrutor</h2>
+  	<h:form prependId="false" class="col s12">
+   	 <p:growl style="color:red"/>
+      <div class="row">
+           
+        <div class="input-field col s4">                 
+          <p:inputText value="#{instrutorController.instrutor.nome}" type="text" styleClass="validate" placeholder="Digite seu nome" required="true" 
+          requiredMessage="O nome é necessário"/>
+          <label>Nome:</label>    
+        </div>      
+         
+        <div class="input-field col s4">       	     
+          <p:inputText id="campoCPF" value="#{instrutorController.instrutor.cpf}" type="text" styleClass="validate" placeholder="Digite seu CPF" required="true" 
+          requiredMessage="O cpf é necessário"/> 
+          <label>CPF:</label>                  
+        </div>
+             
+        <div class="input-field col s4">          
+          <p:inputText id="campoTelefone" value="#{instrutorController.instrutor.telefone}" type="text" styleClass="validate" placeholder="Digite seu telefone" required="true" 
+          requiredMessage="O telefone é necessário"/>  
+          <label>Telefone:</label>            
+        </div>
+        
+         <div class="input-field col s4">
+       	  <p:inputText value="#{instrutorController.instrutor.login}" type="text" styleClass="validate" placeholder="Digite seu login" required="true" 
+          requiredMessage="O login é necessário"/>  
+          <label>Login:</label>                 
+        </div>
+        
+         <div class="input-field col s4">       	      
+          <p:password value="#{instrutorController.instrutor.senha}" type="text" styleClass="validate" placeholder="Digite seu senha"  required="true" 
+          requiredMessage="A senha é necessária"/> 
+          <label>Senha:</label>              
+       	 </div>
+             
+        <div class="input-field col s4">          
+          <p:inputText id="campoData" value="#{instrutorController.instrutor.anoFormacao}" type="text" styleClass="validate" placeholder="Digite a data de formação"
+           required="true" requiredMessage="O ano de conclusão é necessário">
+          <f:convertDateTime pattern="dd/MM/yyyy" />
+          </p:inputText>
+          <label>Ano de Conclusão:</label>    
+        </div>    
+        
+        <div class="input-field col s4">                    
+          <p:inputText value="#{instrutorController.instrutor.salario}" type="text" styleClass="validate" required="true" requiredMessage="O salário é necessário"/>
+       	  <label>Salário:</label>    
+        </div>      
+         
+        </div>        
+        <h:commandButton class="waves-effect brown darken-1 btn" action="#{instrutorController.salvar()}" value="Salvar"/>
+      	<a class="waves-effect brown darken-1 btn" href="index.xhtml">Cancelar</a>          
+      </h:form>  	
+  	</div>
+  </ui:define>
+</ui:composition>
+</body> 
+</html>

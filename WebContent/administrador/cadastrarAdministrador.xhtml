@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template4.xhtml">
+  <ui:define name="container">
+  <div class="row center">
+  	<h2>Cadastro de Administrador</h2>
+    <h:form prependId="false" class="col s12">
+    <p:growl style="color:red"/>
+      <div class="row">    
+             	
+        <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu nome aqui" type="text" styleClass="validate" value="#{administradorController.administrador.nome}" 
+          required="true" requiredMessage="O nome é necessário"></p:inputText>
+          <label>Nome:</label>          
+        </div>   
+      
+       <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu CPF aqui" id="campoCPF" type="text" styleClass="validate" value="#{administradorController.administrador.cpf}" 
+          required="true" requiredMessage="O CPF é necessário"></p:inputText>
+          <label>CPF:</label>          
+        </div>    
+        
+        <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu login aqui" type="text" styleClass="validate" value="#{administradorController.administrador.login}" 
+          required="true" requiredMessage="O login é necessário"></p:inputText>
+          <label>Login:</label>          
+        </div>            
+                
+         <div class="input-field col s4">       	      
+          <p:password value="#{administradorController.administrador.senha}" type="text" styleClass="validate" placeholder="Digite seu senha" required="true" 
+          requiredMessage="A senha é necessária"/>   
+          <label>Senha:</label>        
+       	 </div>     
+       
+         <div class="input-field col s4">       	      
+          <p:inputText value="#{administradorController.administrador.funcao}" type="text" styleClass="validate" placeholder="Digite sua função" required="true" 
+          requiredMessage="A função é necessária"/> 
+          <label>Função:</label>           
+       	 </div>  
+       	 
+         <div class="input-field col s4">       	  
+          <p:inputText value="#{administradorController.administrador.salario}" type="text" styleClass="validate" required="true" 
+          requiredMessage="O salário é necessário"/>  
+          <label>Salário:</label>          
+       	 </div> 
+        </div>        
+        <h:commandButton class="waves-effect brown darken-1 btn" action="#{administradorController.salvar()}" value="Salvar"/>
+      	
+      	<a class="waves-effect brown darken-1 btn" href="index.xhtml">Cancelar</a>              
+      </h:form>      
+     </div> 
+  </ui:define>
+</ui:composition>	
+</body> 
+</html>

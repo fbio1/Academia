@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template3.xhtml">
+<ui:define name="container">
+ <div class="row" align="center">
+  	<h2>Gerenciar Avaliação</h2>
+  
+	  <h:form id="frm">
+		<div class="container">		
+		
+		<p:dataTable emptyMessage="Nenhum registro encontrado" paginator="true"
+		value="#{avaliacaoController.listaAvaliacao}" var="ava" rows="5">	
+		
+		<p:column headerText="Nome do Cliente" sortBy="#{ava.cliente.nome}" filterBy="#{ava.cliente.nome}">
+			<h:outputText value="#{ava.cliente.nome}" />
+		</p:column>
+		
+		<p:column headerText="Data da Avaliação" sortBy="#{ava.dataavaliacao}" filterBy="#{ava.dataavaliacao}">
+			<h:outputText value="#{ava.dataavaliacao}" >
+			<f:convertDateTime pattern="dd/MM/yyyy" />
+			</h:outputText>
+		</p:column>
+		
+		<p:column headerText="Altura">
+			<h:outputText value="#{ava.alturacliente}" />
+		</p:column>
+		
+		<p:column headerText="Peso">
+			<h:outputText value="#{ava.pesocliente}" />
+		</p:column>			
+	
+		<p:column headerText="Gordura">
+			<h:outputText value="#{ava.gorduracliente}" />
+		</p:column>	
+	
+		<p:column headerText="Observação">
+			<h:outputText value="#{ava.observacao}" />
+		</p:column>		
+		
+		<p:column>
+		<f:facet name="header">Editar</f:facet>
+		<h:commandButton action="#{avaliacaoController.editar(ava)}" value="Editar" update="frm"/>
+		</p:column>
+		
+		<p:column>
+		<f:facet name="header">Excluir</f:facet>
+		<h:commandButton action="#{avaliacaoController.remover(ava)}" value="Remover" update="frm"/>
+		</p:column>	
+		</p:dataTable>
+		</div>
+	  </h:form>
+     </div> 
+
+</ui:define>
+</ui:composition>
+</body> 
+</html>

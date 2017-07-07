@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="templetes/template.xhtml">
+  <ui:define name="container">
+  <div class="row center">
+  	<h2>Login</h2>
+    <h:form>
+    <p:growl style="color:red"/>
+    <div class="row center">
+       
+		<div class="input-field col s4">
+			<p:outputLabel value="Usuário" for="usuario" />
+			<p:inputText id="usuario" size="20" value="#{loginBean.login}" />
+		</div>
+		
+		<div class="input-field col s4">
+			<p:outputLabel value="Senha" for="senha" />
+			<p:password id="senha" size="20" value="#{loginBean.senha}" />	
+		</div>
+               
+        </div> 
+        <br/><br/>          
+      <h:commandButton class="waves-effect brown darken-1 btn" value="Entrar" action="#{loginBean.login()}"/>
+      <a class="waves-effect brown darken-1 btn" href="index.xhtml">Cancelar</a>
+      
+      </h:form>       
+     </div>     
+  </ui:define>
+</ui:composition>	
+</body> 
+</html>

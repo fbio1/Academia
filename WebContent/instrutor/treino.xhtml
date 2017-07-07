@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template3.xhtml">
+  <ui:define name="container">
+    <div class="row center">
+    
+    <h:form id="frm">
+		<div class="container">
+		<h5 style="color:#26a69a">Escolha o usuario que queria fazer um treino:</h5><br /><br />
+			
+		<p:dataTable emptyMessage="Nenhum registro encontrado" paginator="true" 
+		value="#{clienteController.listaclientes}" var="cliente" rows="4">
+		
+		<p:column headerText="Nome do Cliente" sortBy="#{cliente.nome}" filterBy="#{cliente.nome}">
+			<h:outputText value="#{cliente.nome}" />
+		</p:column>	
+					
+		<p:column headerText="CPF" sortBy="#{cliente.cpf}" filterBy="#{cliente.nome}">
+			<h:outputText value="#{cliente.cpf}" />
+		</p:column>
+		
+		<p:column>
+		<f:facet name="header">Treino</f:facet>
+		<h:commandButton action="#{treinoController.enviarDados(cliente)}" value="Fazer Treino" update="frm"/>
+		</p:column>			
+		
+		</p:dataTable>
+		</div>
+	  </h:form>  
+	  <br/><br/><br/>
+  	 </div> 
+  </ui:define>
+  </ui:composition>
+</body> 
+</html>

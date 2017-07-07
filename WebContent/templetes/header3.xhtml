@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<h:form>
+<nav class="brown darken-1 lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="http://www.ufrn.br/" class="brand-logo">UFRN</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="../instrutor/bemvindoInstrutor.xhtml">Home</a></li>        
+        <li><a href="../instrutor/avaliacao.xhtml">Gerenciar Avaliação</a></li>
+		<li><a href="../instrutor/gerenciarTreino.xhtml">Gerenciar Treino</a></li>
+		<li><h:commandButton styleClass="waves-effect waves-light btn" style="width:134px" action="#{loginBean.sair()}" value="Sair" /></li>
+      </ul>
+    </div>
+  </nav>
+  </h:form>
+</body> 
+</html>

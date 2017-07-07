@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template2.xhtml">
+  <ui:define name="container">
+  <div class="row center">
+  	<h2>Gerenciar Instrutor</h2>
+  
+	  <h:form id="frm">
+		<div class="container">
+		<p:dataTable emptyMessage="Nenhum registro encontrado" paginator="true" 
+		value="#{instrutorController.listaInstrutor}" var="ins" rows="5">
+		
+		<p:column headerText="Nome" sortBy="#{ins.nome}" filterBy="#{ins.nome}" resizable="true">
+			<h:outputText value="#{ins.nome}" />
+		</p:column>
+		
+		<p:column headerText="CPF" sortBy="#{ins.cpf}" filterBy="#{ins.cpf}">
+			<h:outputText value="#{ins.cpf}" />
+		</p:column>
+		
+		<p:column headerText="Login">
+			<h:outputText value="#{ins.login}" />
+		</p:column>			
+	
+		<p:column headerText="Senha">
+			<h:outputText value="#{ins.senha}" />
+		</p:column>	
+	
+		<p:column headerText="Salário">
+			<h:outputText value="#{ins.salario}" />
+		</p:column>	
+		
+		<p:column headerText="Data de formação do curso">		
+		<h:outputText value="#{ins.anoFormacao}">
+			<f:convertDateTime pattern="dd/MM/yyyy" />
+		</h:outputText>
+		</p:column>
+		
+		<p:column>
+		<f:facet name="header">Editar</f:facet>
+		<h:commandButton action="#{instrutorController.editar(ins)}" value="Editar" update="frm"/>
+		</p:column>
+		
+		<p:column>
+		<f:facet name="header">Excluir</f:facet>
+		<h:commandButton action="#{instrutorController.remover(ins)}" value="Remover" update="frm"/>
+		</p:column>	
+		</p:dataTable>
+		</div>
+	  </h:form>
+     </div> 
+  </ui:define>
+</ui:composition>	
+</body> 
+</html>

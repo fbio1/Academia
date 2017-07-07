@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<h:body> 
+<ui:composition template="../templetes/template3.xhtml">
+<ui:define name="container">
+	<div class="container2" style="margin-left:15%">
+	<h4 style="color:#26a69a">Bem Vindo, <p:outputLabel style="color:#26a69a" value="#{loginBean.nome1}"/> </h4>
+	<h5 style="color:#26a69a">Selecione o que queres fazer</h5>
+	<div class="container" style="margin-left:15%"><br/>
+	
+	<br/>
+		<div id="card-container" class="row center">
+		<div class="col s12 m5 l5">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">assignment</i><a href="avaliacao.xhtml">Cadastrar Avaliação</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l5">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">mode_edit</i><a href="gerenciarAvaliacao.xhtml">Gerenciar Avaliação</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<br /><br /><br /><br /><br /><br />
+		<div class="col s12 m5 l5">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">assignment</i><a href="treino.xhtml">Cadastrar Treino</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l5">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">mode_edit</i><a href="gerenciarTreino.xhtml">Gerenciar Treino</a></span>
+				</div>
+			</div>
+		</div>			
+		</div>
+	</div>
+</div>
+</ui:define>
+</ui:composition>
+</h:body> 
+</html>

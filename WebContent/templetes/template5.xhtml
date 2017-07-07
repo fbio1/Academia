@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+      <!-- Aqui é como será a configuração da página -->
+<h:head>
+<!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+<script>
+jQuery(function($){
+$("#campoData").mask("99/99/9999");
+$("#campoData1").mask("99/99/9999");
+$("#campoTelefone").mask("(99) 99999-9999");
+$("#campoCPF").mask("999.999.999-99");
+});
+</script>
+</h:head>
+
+<h:body> 
+  <script src="../js/materialize.js"></script>
+ 
+	<ui:insert name="header">
+		<ui:include src="header3.xhtml"/>			
+	</ui:insert>
+	
+	<ui:insert name="container">		
+			<ui:include src="container.xhtml" />
+	</ui:insert>	
+	
+	<ui:insert name="foorter">
+		<ui:include src="footer.xhtml" />
+	</ui:insert>
+	</h:body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+      
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template4.xhtml">
+  <ui:define name="container">  
+  <div class="row center">
+  	<h2>Cadastro de Cliente</h2>
+    <h:form prependId="false" class="col s12">
+    <p:growl style="color:red"/>
+      <div class="row">    
+
+       <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu nome aqui" type="text" styleClass="validate" value="#{clienteController.cliente.nome}" 
+          required="true" requiredMessage="O nome é necessário"></p:inputText>
+          <label>Nome:</label>          
+        </div>                 
+         
+        <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu CPF aqui" id="campoCPF" type="text" styleClass="validate" value="#{clienteController.cliente.cpf}" 
+          required="true" requiredMessage="O CPF é necessário"></p:inputText>
+          <label>CPF:</label>          
+        </div>    
+             
+       <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu telefone aqui" id="campoTelefone" type="text" styleClass="validate" 
+          value="#{clienteController.cliente.telefone}" required="true" requiredMessage="O telefone é necessário"></p:inputText>
+          <label>Telefone:</label>          
+        </div>  
+             
+       <div class="input-field col s4">       
+          <p:inputText id="campoData" value="#{clienteController.cliente.dataNascimento}" placeholder="Digite sua data de nascimento"
+           required="true" requiredMessage="A data de nascimento é necessária" type="text" styleClass="validate">
+          <f:convertDateTime pattern="dd/MM/yyyy" />
+          </p:inputText>
+          <label>Data de nascimento:</label>
+       </div>                  
+           
+       <div class="input-field col s4">
+          <p:inputText placeholder="Digite seu bairro aqui" type="text" styleClass="validate" value="#{clienteController.cliente.endereco.bairro}" 
+          required="true" requiredMessage="O bairro é necessário"></p:inputText>
+          <label>Bairro:</label>          
+        </div> 
+        
+       <div class="input-field col s4">
+          <p:inputText placeholder="Digite sua rua aqui" type="text" styleClass="validate" value="#{clienteController.cliente.endereco.rua}"
+          required="true" requiredMessage="A rua é necessária"></p:inputText>
+          <label>Rua:</label>          
+        </div> 
+        
+         <div class="input-field col s4">
+          <p:inputText placeholder="Digite sua cidade aqui" type="text" styleClass="validate" value="#{clienteController.cliente.endereco.cidade}"
+          required="true" requiredMessage="A cidade é necessária"></p:inputText>
+          <label>Cidade:</label>          
+         </div>   
+           
+        
+        <div class="input-field col s4">     
+          <p:inputText id="campoData1" value="#{clienteController.cliente.matricula.dataVencimento}" placeholder="Digite a data de vencimento"
+           required="true" requiredMessage="A data de vencimento é necessária" type="text" styleClass="validate">
+          <f:convertDateTime pattern="dd/MM/yyyy" />
+          </p:inputText>
+          <label>Data de Vencimento:</label> 
+        </div>        
+        </div>        
+        <h:commandButton class="waves-effect brown darken-1 btn" action="#{clienteController.salvar()}" value="Salvar"/>
+      	<a class="waves-effect brown darken-1 btn" href="bemvindoAdm.xhtml">Cancelar</a>              
+      </h:form>      
+     </div> 
+  </ui:define>
+</ui:composition>	
+</body> 
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body>
+<ui:composition template="../templetes/template5.xhtml">
+<ui:define name="container">
+<div class="row center">
+  	<h2>Cadastro de um treino</h2>
+    <h:form prependId="false" class="col s12">
+    <p:growl style="color:red"/>
+      <div class="row">    
+
+       <div class="input-field col s4">
+          <p:inputText placeholder="Digite a data da semana do treino aqui" type="text" styleClass="validate" value="#{treinoController.treino.diaTreino}" 
+          required="true" requiredMessage="O data do treino é necessário"></p:inputText>
+          <label>Dia da semana do Treino:</label>          
+        </div>
+        
+         <div class="input-field col s4">
+          <p:inputText placeholder="Digite o nome do exercicio aqui" type="text" styleClass="validate" value="#{treinoController.exercicios.nome}" 
+          required="true" requiredMessage="O nome do exercício é necessário"></p:inputText>
+          <label>Nome do Exercício:</label>          
+        </div>                 
+        
+          <div class="input-field col s4">
+          <p:inputText placeholder="Digite a repetição do exercicio aqui" type="text" styleClass="validate" value="#{treinoController.exercicios.repeticao}" 
+          required="true" requiredMessage="A repetição do exercício é necessária"></p:inputText>
+          <label>Repetição do Exercício:</label>          
+        </div>  
+        
+        <div class="input-field col s4">
+          <p:inputText placeholder="Digite a quantidade carga do exercicio aqui" type="text" styleClass="validate" value="#{treinoController.exercicios.carga}" 
+          required="true" requiredMessage="A carga é necessária"></p:inputText>
+          <label>Carga do Exercício:</label>          
+        </div>
+        
+       <div class="input col s4">
+        <h:panelGrid columns="2">
+       <p:outputLabel  value="Tipo de Exercicio:" for="tipo"/>
+        <p:selectOneMenu id="tipo" value="#{treinoController.exercicios.tipo}" style="width:225px"> 
+        	<f:selectItem itemLabel="Selecione um tipo de exercício"/>        
+            <f:selectItems  value="#{treinoController.listaTipo}" var="tipo" itemLabel="#{tipo}" itemValue="#{tipo}"/>           
+        </p:selectOneMenu>   
+        </h:panelGrid>  
+        </div>        
+        </div>        
+        <h:commandButton class="waves-effect brown darken-1 btn" action="#{treinoController.salvar()}" value="Salvar"/>
+      	<a class="waves-effect brown darken-1 btn" href="treino.xhtml">Cancelar</a>              
+      </h:form>      
+     </div> 
+</ui:define>
+</ui:composition>
+</body> 
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body>
+<ui:composition template="../templetes/template3.xhtml">
+<ui:define name="container">
+	<div class="row" align="center">
+  	<h2>Gerenciar Treino</h2>
+  
+	  <h:form id="frm">
+		<div class="container">		
+		
+		<p:dataTable emptyMessage="Nenhum registro encontrado" paginator="true"
+		value="#{treinoController.listatreino}" var="treino" rows="5">	
+		
+		<p:column headerText="Nome do Cliente" sortBy="#{treino.cliente.nome}" filterBy="#{treino.cliente.nome}">
+			<h:outputText value="#{treino.cliente.nome}" />
+		</p:column>
+		
+		<p:column headerText="Data do Treino" sortBy="#{treino.diaTreino}" filterBy="#{treino.diaTreino}">
+			<h:outputText value="#{treino.diaTreino}" />
+		</p:column>
+		
+		<p:column headerText="Nome do exercicio">
+			<h:outputText value="#{treino.exercicios.get(nome).nome}" />
+		</p:column>		
+		
+		<p:column headerText="Carga">
+			<h:outputText value="#{treino.exercicios.get(carga).carga}" />
+		</p:column>
+		
+		<p:column headerText="Repetição">
+			<h:outputText value="#{treino.exercicios.get(repeticao).repeticao}" />
+		</p:column>			
+	
+		<p:column headerText="Tipo de Exercicio">
+			<h:outputText value="#{treino.exercicios.get(tipo).tipo}" />
+		</p:column>		
+		
+		
+		<p:column>
+		<f:facet name="header">Editar</f:facet>
+		<h:commandButton action="#{treinoController.editar(treino)}" value="Editar" update="frm"/>
+		</p:column>
+		
+		<p:column>
+		<f:facet name="header">Excluir</f:facet>
+		<h:commandButton action="#{treinoController.remover(treino)}" value="Remover" update="frm"/>
+		</p:column>	
+		</p:dataTable>
+		</div>
+	  </h:form>
+     </div> 
+	
+</ui:define>
+</ui:composition>
+</body> 
+</html>

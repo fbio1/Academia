@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templetes/template2.xhtml">
+<ui:define name="container">
+<div class="container2">
+	<div class="container" style="margin-left:15%"><br/>
+	<h4 style="color:#26a69a">Bem Vindo, <p:outputLabel style="color:#26a69a" value="#{loginBean.nome}"/> </h4>
+	<h5 style="color:#26a69a">Selecione o que queres fazer</h5>
+	<br/>
+		<div id="card-container" class="row center">
+		<div class="col s12 m5 l4">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">perm_identity</i><a href="cadastrarCliente.xhtml">Cadastrar Cliente</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l4">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">mode_edit</i><a href="gerenciarCliente.xhtml">Gerenciar Cliente</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l4">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">mode_edit</i><a href="visualizardadosCliente.xhtml">Visualizar mais dados sobre Cliente</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l4">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">assignment</i><a href="pagamento.xhtml">Pagamento Cliente</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l4">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">assignment_ind</i><a href="cadastrarInstrutor.xhtml">Cadastrar Instrutor</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l4">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">mode_edit</i><a href="gerenciarInstrutor.xhtml">Gerenciar Instrutor</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="card-action"></div>
+		<div class="col s12 m5 l6">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">supervisor_account</i><a href="cadastrarAdministrador.xhtml">Cadastrar Administrador</a></span>
+				</div>
+			</div>
+		</div>	
+		<div class="card-action"></div>
+		<br />
+		<div class="col s12 m5 l6">
+			<div class="card white">
+				<div class="card-content white-text"><span class="card-title cyan-text text-darken-3">
+				<i class="small material-icons">mode_edit</i><a href="gerenciarAdministrador.xhtml">Gerenciar Administrador</a></span>
+				</div>
+			</div>
+		</div>		
+		</div>
+	</div>
+</div>
+</ui:define>
+</ui:composition>
+</html>

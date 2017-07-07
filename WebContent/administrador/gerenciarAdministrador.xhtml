@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<ui:composition template="../templetes/template2.xhtml">
+<ui:define name="container">
+ <div class="row" align="center">
+  	<h2>Gerenciar Administrador</h2>
+  
+	  <h:form id="frm">
+		<div class="container">
+		
+		<p:dataTable emptyMessage="Nenhum registro encontrado" paginator="true"
+		value="#{administradorController.listaAdministrador}" var="adm" rows="5">
+		
+		<p:column headerText="Nome" sortBy="#{adm.nome}" filterBy="#{adm.nome}" resizable="true">
+			<h:outputText value="#{adm.nome}" />
+		</p:column>
+		
+		<p:column headerText="CPF" sortBy="#{adm.cpf}" filterBy="#{adm.nome}">
+			<h:outputText value="#{adm.cpf}" />
+		</p:column>
+		
+		<p:column headerText="Login">
+			<h:outputText value="#{adm.login}" />
+		</p:column>			
+	
+		<p:column headerText="Senha">
+			<h:outputText value="#{adm.senha}" />
+		</p:column>	
+	
+		<p:column headerText="Salário">
+			<h:outputText value="#{adm.salario}" />
+		</p:column>	
+		
+		<p:column headerText="Função">
+			<h:outputText value="#{adm.funcao}" />
+		</p:column>	
+		
+		<p:column>
+		<f:facet name="header">Editar</f:facet>
+		<h:commandButton action="#{administradorController.editar(adm)}" value="Editar" update="frm"/>
+		</p:column>
+		
+		<p:column>
+		<f:facet name="header">Excluir</f:facet>
+		<h:commandButton action="#{administradorController.remover(adm)}" value="Remover" update="frm"/>
+		</p:column>	
+		</p:dataTable>
+		</div>
+	  </h:form>
+     </div> 
+
+</ui:define>
+</ui:composition>
+</body> 
+</html>
