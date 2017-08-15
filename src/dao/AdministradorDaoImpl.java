@@ -4,8 +4,7 @@ import model.Administrador;
 
 public class AdministradorDaoImpl extends GenericDaoImpl<Administrador, Integer>{
 	 
-	public AdministradorDaoImpl() { 
-		
+	public AdministradorDaoImpl() { 		
 	        super(Administrador.class); 
 	 } 
 }
